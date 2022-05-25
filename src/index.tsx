@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { LocalProvider, Todos } from './Todos';
+import { CoreProvider, LocalProvider, Todos } from './Todos';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
@@ -10,9 +10,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <LocalProvider>
-      <Todos />
-    </LocalProvider>
+    <CoreProvider>
+      <LocalProvider>
+        <Todos />
+      </LocalProvider>
+    </CoreProvider>
   </React.StrictMode>,
 );
 
